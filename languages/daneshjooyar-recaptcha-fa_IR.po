@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Daneshjooyar Recaptcha\n"
+"POT-Creation-Date: 2017-02-12 17:16+0330\n"
+"PO-Revision-Date: 2017-02-12 17:17+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: daneshjooyar-recaptcha.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: classes/DYRECAPTCHA_Core.php:121 classes/DYRECAPTCHA_Core.php:124
+msgid ""
+"<strong>Erro</strong>:Recaptcha response is not correct, Please try again."
+msgstr "<strong>خطا</strong>: پاسخ کپچا صحیح نیست. لطفاً دوباره امتحان کنید."
+
+#: classes/DYRECAPTCHA_Settings.php:93
+msgid "Persian"
+msgstr "فارسی"
+
+#: classes/DYRECAPTCHA_Settings.php:94
+msgid "Arabic"
+msgstr "عربی"
+
+#: classes/DYRECAPTCHA_Settings.php:95
+msgid "English(US)"
+msgstr "انگلیسی(ایالات متحده)"
+
+#: classes/DYRECAPTCHA_Settings.php:96
+msgid "English(UK)"
+msgstr "انگلیسی(بریتانیا)"
+
+#: classes/DYRECAPTCHA_Settings.php:200 classes/DYRECAPTCHA_Settings.php:201
+msgid "Recaptcha Settings"
+msgstr "تنظیمات دانشجویار ریکپتچا"
+
+#: classes/DYRECAPTCHA_Settings.php:216
+msgid "Daneshjooyar Recaptcha Settings Page"
+msgstr "صفحه تنظیمات دانشجویار ریکپتچا"
+
+#: classes/DYRECAPTCHA_Settings.php:235
+msgid "General Settings"
+msgstr "تنظیمات همگانی"
+
+#: classes/DYRECAPTCHA_Settings.php:242
+msgid "Site Key"
+msgstr "کلید سایت(Sitekey)"
+
+#: classes/DYRECAPTCHA_Settings.php:252
+msgid "secret Key"
+msgstr "کلید سری(Secretkey)"
+
+#: classes/DYRECAPTCHA_Settings.php:262
+msgid "Language"
+msgstr "زبان"
+
+#: classes/DYRECAPTCHA_Settings.php:272
+msgid "Active"
+msgstr "فعال"
+
+#: classes/DYRECAPTCHA_Settings.php:282
+msgid "Whitelist IPs"
+msgstr "لیست سفید آی پی"
+
+#: classes/DYRECAPTCHA_Settings.php:292
+msgid "Is active in login page"
+msgstr "فعال در صفحه ورود"
+
+#: classes/DYRECAPTCHA_Settings.php:302
+msgid "Is active in registration page"
+msgstr "فعال در صفحه ثبت نام"
+
+#: classes/DYRECAPTCHA_Settings.php:312
+msgid "Is active in reset password page"
+msgstr "فعال در صفحه فراموشی گذرواژه"
+
+#: classes/DYRECAPTCHA_Settings.php:322
+msgid "Is active in comment form"
+msgstr "فعال در فرم دیدگاه"
+
+#. Plugin Name of the plugin/theme
+msgid "Daneshjooyar Recaptcha"
+msgstr "دانشجویار ریکپتچا"
+
+#. Plugin URI of the plugin/theme
+msgid "htts://daneshjooyar.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Recaptcha Plugin for security"
+msgstr "افزونه کپچا برای امنیت"
+
+#. Author of the plugin/theme
+msgid "Hamed Moodi"
+msgstr "حامد مودی"
+
+#. Author URI of the plugin/theme
+msgid "http://ircodex.ir"
+msgstr ""
