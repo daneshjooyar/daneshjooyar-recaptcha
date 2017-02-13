@@ -26,7 +26,10 @@ class DYRECAPTCHA_Core
 	
 	function __construct( )
 	{
+		//Instatiation setting object
 		$this->settings = new DYRECAPTCHA_Settings();
+
+		//set google recaptcha script with custom language from settings
 		$this->recaptcha_script = 'https://www.google.com/recaptcha/api.js?hl=' . $this->settings->get_language();
 	}
 
@@ -36,10 +39,20 @@ class DYRECAPTCHA_Core
 	 */
 	public function run() {
 
+		//Active Setting page in admin area
 		$this->settings->active();
 
+		//Check for active recaptcha
 		if( $this->settings->is_active() && ! $this->settings->is_in_whitelist( $this->get_real_user_ip() ) ){
-			
+
+			if( $this->settings->is_active_comment_form() ) {
+				add_action( 'wp_enqueue_scripts', array( $this, 'add_recaptcha_script' ) );
+				add_action( 'comment_form_after_fields', array( $this, 'add_recaptcha' ) );
+				add_action( 'pre_comment_on_post', array( $this, 'authentication_recaptcha' ) );
+				return;
+			}
+
+			//If not comment or not in front-end enqueue script and style in login page 
 			add_action( 'login_enqueue_scripts', array( $this, 'add_recaptcha_script' ) );
 			add_action( 'login_enqueue_scripts', array( $this, 'add_recaptcha_style' ));
 			
@@ -121,7 +134,7 @@ class DYRECAPTCHA_Core
 			return $user;
 		}
 
-		$url = 'https://www.google.com/recaptcha/api/siteverify';
+		$google_site_verify_url = 'https://www.google.com/recaptcha/api/siteverify';
 
 		$params = array(
 			'secret' 	=> $this->settings->get_secretkey(),
@@ -129,7 +142,7 @@ class DYRECAPTCHA_Core
 			'remoteip'	=> $this->get_real_user_ip()
 		);
 
-		$response = wp_remote_get( add_query_arg( $params, $url ) );
+		$response = wp_remote_get( add_query_arg( $params, $google_site_verify_url ) );
 
 		if( ! is_wp_error( $response ) ){
 			if( wp_remote_retrieve_response_code( $response ) == 200 ){
@@ -137,6 +150,11 @@ class DYRECAPTCHA_Core
 				if( $result->success == true ){
 					return $user;
 				}else{
+
+					//Specific wp_die for comment form
+					if( current_filter() === 'pre_comment_on_post' ) {
+						wp_die( __( 'ERROR', 'daneshjooyar-recaptcha' ) . ':&nbsp;' . __( 'You have entered an incorrect reCAPTCHA value. Click the BACK button on your browser, and try again.', 'daneshjooyar-recaptcha' ) );
+					}
 
 					//Specific return boolean for 'allow_password_reset' filter
 					if( current_filter() === 'allow_password_reset' ){
